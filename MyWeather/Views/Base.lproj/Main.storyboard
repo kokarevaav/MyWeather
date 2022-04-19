@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyWeather" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,9 @@
                                 <color key="tintColor" name="Color"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" backgroundImage="magnifyingglass.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="searchPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="srN-2v-dI5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moscow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qz7-Nx-e47" userLabel="City">
                                 <rect key="frame" x="123.5" y="714" width="167.5" height="48"/>
@@ -105,6 +108,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="Dtv-q7-1PE" secondAttribute="leading" id="xBB-dV-bLb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="city" destination="Qz7-Nx-e47" id="mci-g6-5BA"/>
+                        <outlet property="feelTemperature" destination="FzS-iH-wLD" id="pXf-ag-geW"/>
+                        <outlet property="searchButton" destination="REd-kG-7Rb" id="74k-d3-K4H"/>
+                        <outlet property="temperature" destination="Fev-gK-kwm" id="8ho-T7-fdm"/>
+                        <outlet property="weatherIcon" destination="1f1-5m-Ix8" id="ul0-Un-WLg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,7 +126,7 @@
         <image name="cloud.rain.fill" catalog="system" width="125" height="128"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="Color">
-            <color red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.8320000171661377" blue="0.47299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
