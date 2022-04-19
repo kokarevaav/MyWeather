@@ -59,12 +59,12 @@
 				D9DBFA3A280F2D180072CB5C /* Views */,
 				D9DBFA39280F2D0E0072CB5C /* Controllers */,
 				D9DBFA38280F2D070072CB5C /* Model */,
-				D9DBFA37280F2CFC0072CB5C /* Other */,
+				D9DBFA37280F2CFC0072CB5C /* Supporting files */,
 			);
 			path = MyWeather;
 			sourceTree = "<group>";
 		};
-		D9DBFA37280F2CFC0072CB5C /* Other */ = {
+		D9DBFA37280F2CFC0072CB5C /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
 				D9DBFA23280F2CE80072CB5C /* AppDelegate.swift */,
@@ -72,7 +72,7 @@
 				D9DBFA2C280F2CEA0072CB5C /* Assets.xcassets */,
 				D9DBFA31280F2CEA0072CB5C /* Info.plist */,
 			);
-			path = Other;
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 		D9DBFA38280F2D070072CB5C /* Model */ = {
