@@ -10,6 +10,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ApiManeger.apiMeneger.getLocation(city: "London") { location in
+            
+        }
     }
 
     @IBAction func searchPressed() {

@@ -126,7 +126,7 @@
         <image name="cloud.rain.fill" catalog="system" width="125" height="128"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="Color">
-            <color red="1" green="0.8320000171661377" blue="0.47299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
