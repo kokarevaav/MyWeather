@@ -45,6 +45,7 @@ extension ViewController {
                     self.temperature.text = String(Int(round(weather.main!.temp!)))
                     self.feelTemperature.text = String(Int(round(weather.main!.feelsLike!))) + "°C"
                     self.city.text = city
+                    self.weatherIcon.image = UIImage(systemName: self.getWeatherImage(weather: weather))
                 }
             }
             else {
@@ -52,6 +53,29 @@ extension ViewController {
                     self.presentError(withTitle: "Oops...", message: "Сheck the correctness of the input", style: .alert)
                 }
             }
+        }
+    }
+    
+    func getWeatherImage(weather : Weather) -> String {
+        switch weather.weather![0].main {
+        case "Thunderstorm" :
+            return "cloud.bolt.rain.fill"
+        case "Drizzle" :
+            return "cloud.drizzle.fill"
+        case "Rain" :
+            return "cloud.rain.fill"
+        case "Snow" :
+            return "cloud.snow.fill"
+        case "Dust", "Sand", "Ash" :
+            return "smoke.fill"
+        case "Squall", "Tornado" :
+            return "tornado.fill"
+        case "Clear" :
+            return "sun.max.fill"
+        case "Clouds" :
+            return "cloud.sun.fill"
+        default :
+            return "cloud.fog.fill"
         }
     }
 }
