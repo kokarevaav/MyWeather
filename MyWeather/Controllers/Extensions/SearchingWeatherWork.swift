@@ -9,9 +9,18 @@ extension ViewController {
         }
         let search = UIAlertAction(title: "Search", style: .default) { action in
             let textField = ac.textFields?.first
-            guard let cityName = textField?.text else { return }
-            if cityName != "" {
+            guard var cityName = textField?.text else {
+                self.presentError(withTitle: "Oops...", message: "Please try again", style: .alert)
+                return
+            }
+            cityName.removeAll(where: { !Character(extendedGraphemeClusterLiteral: $0).isLetter })
+            cityName = cityName.lowercased()
+            cityName = cityName.capitalized
+            if (cityName != "") {
                 self.displayWeather(city: cityName)
+            }
+            else {
+                self.presentError(withTitle: "Oops...", message: "Please try again", style: .alert)
             }
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -36,6 +45,11 @@ extension ViewController {
                     self.temperature.text = String(Int(round(weather.main!.temp!)))
                     self.feelTemperature.text = String(Int(round(weather.main!.feelsLike!))) + "°C"
                     self.city.text = city
+                }
+            }
+            else {
+                DispatchQueue.main.async {
+                    self.presentError(withTitle: "Oops...", message: "Сheck the correctness of the input", style: .alert)
                 }
             }
         }

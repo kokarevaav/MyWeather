@@ -57,7 +57,6 @@ class ApiManager {
                     else {
                         completion(nil)
                     }
-                    //print(String(decoding: data!, as: UTF8.self))
                 }
                 task.resume()
             }

@@ -10,6 +10,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        displayWeather(city: "Minsk")
     }
     
     @IBAction func searchPressed() {
