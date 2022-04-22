@@ -46,22 +46,22 @@ class ApiManager {
         task.resume()
     }
     
-    func getTemperature(city : String, completion : @escaping (Weather?) -> Void) {
+    func getTemperature(city : String, completion : @escaping (Weather?, Location?) -> Void) {
         getLocation(city: city) { location in
             if (!location.isEmpty) {
                 let request = ApiType.getWeatherInfo(lat: location[0].lat!, lon: location[0].lon!).request
                 let task = URLSession.shared.dataTask(with: request) { data, response, error in
                     if let data = data, let weather = try? JSONDecoder().decode(Weather.self, from: data) {
-                        completion(weather)
+                        completion(weather, location)
                     }
                     else {
-                        completion(nil)
+                        completion(nil, nil)
                     }
                 }
                 task.resume()
             }
             else {
-                completion(nil)
+                completion(nil, nil)
             }
         }
     }

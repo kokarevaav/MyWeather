@@ -39,12 +39,12 @@ extension ViewController {
     }
     
     func displayWeather(city : String){
-        ApiManager.apiManager.getTemperature(city: city) { weather in
+        ApiManager.apiManager.getTemperature(city: city) { weather, location in
             if let weather = weather {
                 DispatchQueue.main.async {
                     self.temperature.text = String(Int(round(weather.main!.temp!)))
                     self.feelTemperature.text = String(Int(round(weather.main!.feelsLike!))) + "°C"
-                    self.city.text = city
+                    self.city.text = location![0].name!
                     self.weatherIcon.image = UIImage(systemName: self.getWeatherImage(weather: weather))
                 }
             }
