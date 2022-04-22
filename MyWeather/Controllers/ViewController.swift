@@ -10,12 +10,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ApiManeger.apiMeneger.getLocation(city: "London") { location in
-            
-        }
     }
-
+    
     @IBAction func searchPressed() {
         self.presentSearchAlertController(withTitle: "Enter city name", message: nil, style: .alert)
     }

@@ -1,16 +1,16 @@
 import Foundation
 
-// MARK: - Location
-struct Location: Codable {
+// MARK: - LocationElement
+struct LocationElement: Codable {
     let name: String?
     let localNames: LocalNames?
     let lat, lon: Double?
-    let country: String?
+    let country, state: String?
 
     enum CodingKeys: String, CodingKey {
         case name
         case localNames = "local_names"
-        case lat, lon, country
+        case lat, lon, country, state
     }
 }
 
@@ -33,3 +33,5 @@ struct LocalNames: Codable {
         case fi, fr, gl, he, hi, hr, hu, id, it, ja, la, lt, mk, nl, no, pl, pt, ro, ru, sk, sl, sr, th, tr, vi, zu
     }
 }
+
+typealias Location = [LocationElement]
